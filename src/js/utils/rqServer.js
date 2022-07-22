@@ -39,7 +39,6 @@ export const putRq = async (url, data, token) => {
             return resolve.json()
         }
         
-
         return false
     })
 }

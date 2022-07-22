@@ -1,5 +1,6 @@
+import { mainMenu } from "../contentFunc/mainMenu";
 import { pathRul } from "../route/routeObj";
-import { putRq } from "./rqServer";
+import { deleteBook, putRq } from "./rqServer";
 
 export const loadFuncPath = () => {
     pathRul.forEach(obj => { 
@@ -61,4 +62,41 @@ export const toggleFavorite = (book, favoriteBtn, userToken) => {
     }
 
     putRq(`http://localhost:1717/books/update/${book.id}`, {isFavorite: book.isFavorite}, userToken)
+}
+
+export const deleteBookFunc = (book, userToken, allBookLi, newLi) => {
+    const modalDelete = document.querySelector('.modal-delete-book');
+    modalDelete.classList.remove('d-none');
+    const deleteBtn = document.querySelector('.modal-delete-btn');
+    const notDeleteBtn = document.querySelector('.modal-not-delete-btn');
+
+    deleteBtn?.addEventListener('click', () => {
+        if(allBookLi) deleteDeteilBook()
+        if(newLi) deleteMiniBook()
+    })
+
+    function deleteDeteilBook () {
+        deleteBook(`http://localhost:1717/books/delete/${book.id}`, userToken);
+        const tagBook = Array.from(allBookLi)?.find(elem => elem.dataset.bookId == book.id);
+        if(tagBook) tagBook.remove();
+    
+        window.history.pushState({}, '', 'main-menu');
+        mainMenu();
+        closeAllPage();
+        loadFuncPath();
+        modalDelete.classList.add('d-none');
+    }
+
+    function deleteMiniBook() {
+        deleteBook(`http://localhost:1717/books/delete/${book.id}`, userToken);
+        mainMenu();
+        newLi.remove();
+
+        modalDelete.classList.add('d-none');
+    }
+
+    notDeleteBtn?.addEventListener('click', () => {
+        modalDelete.classList.add('d-none');
+    })
+
 }

@@ -43,3 +43,28 @@
     &--active
         transform: scale(1)
         opacity: 1
+
+.modal-delete-book
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    min-height: 100vh
+    background: none
+    overflow-y: auto
+    +flex(column, center, center)
+    background: rgba(0, 0, 0, .6)
+
+    & h2 
+        color: $white-color
+        margin-bottom: 30px
+
+    &__body
+        background: rgba(0, 0, 0, .8)
+        padding: 50px
+
+    &__btns
+        +flex(row, center, center)
+        gap: 30px
+
+    & button 

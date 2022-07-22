@@ -1,6 +1,6 @@
 import { mainMenu } from "../contentFunc/mainMenu";
 import { deleteBook, putRq } from "../utils/rqServer"
-import { toggleFavorite } from "../utils/util";
+import { deleteBookFunc, toggleFavorite } from "../utils/util";
 
 const userToken = JSON.parse(localStorage.getItem('bookDataCurrentUser'));
 
@@ -66,9 +66,8 @@ export const renderNewBook = (book) => {
     bookLink.href = `detail-book?bookid=${book.id}`;
 
     trashBtn?.addEventListener('click', () => {
-        deleteBook(`http://localhost:1717/books/delete/${book.id}`, userToken);
-        mainMenu();
-        newLi.remove();
+
+        deleteBookFunc(book, userToken, false, newLi)
     })
 
     favoriteBtn?.addEventListener('click', () => {

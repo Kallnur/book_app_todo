@@ -1,6 +1,6 @@
 import { updateBook } from "../modalFunc/updateBook";
 import { deleteBook, getRq } from "../utils/rqServer";
-import { closeAllPage, loadFuncPath, toggleFavorite } from "../utils/util";
+import { closeAllPage, deleteBookFunc, loadFuncPath, toggleFavorite } from "../utils/util";
 import { mainMenu } from "./mainMenu";
 
 export const detailBook = () => {
@@ -56,13 +56,8 @@ export const detailBook = () => {
         })
 
         trashBtn?.addEventListener('click', () => {
-            deleteBook(`http://localhost:1717/books/delete/${book.id}`, userToken);
-            const tagBook = Array.from(allBookLi)?.find(elem => elem.dataset.bookId == book.id);
-            if(tagBook) tagBook.remove();
-            window.history.pushState({}, '', 'main-menu');
-            mainMenu();
-            closeAllPage();
-            loadFuncPath();
+
+            deleteBookFunc(book, userToken, allBookLi);
         })
     })
 
