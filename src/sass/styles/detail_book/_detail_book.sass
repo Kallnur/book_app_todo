@@ -1,0 +1,86 @@
+.detail-book
+
+    &__body
+        width: 100%
+        height: 100%
+        +flex(column, center, center)
+
+    &__title
+        color: $white-color
+        font-size: $fs-b
+        margin-bottom: 40px
+
+    &__block
+        width: 80%
+        padding: 60px
+        background: $white-color
+        box-shadow: 0 0 15px $white-color
+        border-radius: 4px
+
+    &__name
+        font-size: $fs-1
+        margin-bottom: 10px
+
+    &__author
+        font-weight: 600
+        font-size: $fs-4
+        letter-spacing: .7px   
+        margin-bottom: 30px 
+        display: inline-block
+
+    &__list
+        +flex(column, center, flex-start)
+        gap: 20px
+        margin-bottom: 50px     
+
+    &__item
+        padding-left: 50px
+        border-left: 1px solid 
+        font-size: $fs-3
+
+    &__btns
+        +flex(row, center, center)
+        gap: 15px
+
+        & .book-btn
+            background: $main-text-color
+            color: $white-color
+            box-shadow: 0 0 7px $bg-grad-end
+            display: inline-block
+            margin-right: 20px
+
+            &:hover, &:focus 
+                box-shadow: 0 0 12px $bg-grad-end
+
+            &:active 
+                background: $active-color
+
+    
+    &__icon-btn
+        padding: 10px 10px 6px 10px
+        border-radius: 4px
+        background: $main-text-color
+        box-shadow: 0 0 12px $bg-grad-end
+        border: 2px solid transparent
+        transition: .4s
+        & path
+            fill: #b1b1b1
+        &:hover, &:focus 
+            border: 2px solid $active-color
+        &:active 
+            background: $active-color
+
+    &__prev-btn
+        position: absolute
+        top: 10px
+        left: 140px
+        background: rgba($white-color, .9)  
+        box-shadow: 0 0 8px $white-color  
+        border-radius: 10px
+        padding: 10px 12px 6px 12px
+        transition: .4s
+
+        &:hover, &:focus 
+            box-shadow: 0 0 14px $white-color  
+        &:active 
+            background: $active-color   

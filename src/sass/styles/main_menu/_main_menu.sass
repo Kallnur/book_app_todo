@@ -1,0 +1,92 @@
+.main-menu
+
+    &__books
+        +flex(column, center, center)
+
+        &-title 
+            color: $white-color
+            font-size: $fs-b
+            margin-bottom: 50px
+
+        &-list 
+            +flex(row, space-between, stretch)
+            flex-wrap: wrap
+            gap: 35px 20px
+            margin-bottom: 50px
+
+        &-item 
+            position: relative
+            width: 46%
+            +flex(row, space-between, strecth)
+            gap: 10px
+            padding: 40px
+            background: rgba($white-color, .8)
+            box-shadow: 0 0 10px $white-color
+            border-radius: 8px
+            opacity: .95
+            transition: .3s
+
+            &:hover, &:focus 
+                opacity: 1
+                box-shadow: 0 0 20px $white-color
+
+
+        &-info 
+            order: 1
+
+        &-name 
+            margin-bottom: 20px
+            font-size: $fs-1
+            font-weight: bold
+            display: block
+            order: 1
+
+        &-author
+            font-weight: 400 
+            letter-spacing: .5px
+            font-size: $fs-4  
+            order: 2
+
+        &-btns 
+            position: relative
+            +flex(column, space-between, center)
+            min-height: 100%
+            gap: 15px
+            order: 2
+
+        &-btn 
+            padding: 10px 10px 6px 10px
+            border-radius: 4px
+            background: $white-color
+            box-shadow: 0 0 12px $white-color
+            border: 2px solid transparent
+            transition: .4s
+
+            & path
+                fill: #b1b1b1
+
+            &:hover, &:focus 
+                border: 2px solid $active-color
+
+            &:active 
+                background: $active-color
+
+.btn-add-fovarite     
+    order: 1 
+    
+.btn-delete-book
+    order: 2
+
+.btn-add-fovarite
+    & img:nth-child(2)
+        display: none 
+
+    &--true 
+        & img:nth-child(1)
+            display: none
+        & img:nth-child(2)
+            display: block 
+    
+
+
+@import './_header'

@@ -1,0 +1,26 @@
+.input-block
+    position: relative
+    margin: 10px 0
+    +flex(column, center, flex-start)
+
+    & span
+        position: absolute
+        left: 0
+        bottom: 0
+        transform: translateY(105%)
+        font-size: $fs-5
+        color: $white-color
+    
+    &--warn 
+        border: 1px solid #FF0505
+
+    & input
+        width: 400px
+        padding: 12px 20px  
+        border-radius: 3px
+        border: 2px solid transparent
+        font-size: $fs-4
+        background: $white-color
+        
+        &:focus, &:hover
+            box-shadow: 0 0 8px $white-color

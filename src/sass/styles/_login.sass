@@ -1,0 +1,73 @@
+.login
+
+    &__title
+        font-size: $fs-1
+        color: $white-color
+        margin-bottom: 10px
+
+    &__body
+        width: 100%
+        height: 100%
+        +flex(column, center, center)
+        gap: 5px
+        
+        & input
+            width: 400px
+            padding: 12px 20px  
+            border-radius: 3px
+            border: 2px solid transparent
+            font-size: $fs-4
+            background: $white-color
+
+            &:focus, &:hover
+                box-shadow: 0 0 8px $white-color
+
+    &__btn
+        margin-top: 20px !important
+
+    &__form-body
+        +flex(column, center, center)
+
+    &__input-block
+        position: relative
+        margin: 10px 0
+        +flex(column, center, flex-start)
+
+        & span
+            position: absolute
+            left: 0
+            bottom: 0
+            transform: translateY(105%)
+            font-size: $fs-5
+            color: $white-color
+
+        &--warn 
+            border: 1px solid #FF0505
+
+    &__toggle-sign
+        align-self: end
+        font-size: $fs-3
+        color: $white-color
+        margin-top: 30px
+        +activeBottomLine
+
+    
+    &--sign-in
+        & .sign-up
+            transform: translateY(-200%)
+        & .sign-in
+            transform: translateY(0)
+
+    &--sign-up
+        & .sign-up
+            transform: translateY(0)
+        & .sign-in
+            transform: translateY(-200%)
+
+.sign-block
+    padding: 90px 120px
+    top: 50px   
+    box-shadow: 0 0 5px $white-color
+    border-radius: 4px
+    transition: .5s
+    position: absolute

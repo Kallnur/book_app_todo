@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Books Data</title>
+    </head>
+    <body>
+        <div class="page login login--sign-in d-none">
+            <div class="wrapper">
+                <div class="page-content">
+                    <div class="sign-in sign-block">
+                        <div class="login__body">
+                            <h2 class="login__title">Вход</h2>
+                            <div class="login__input-block">
+                                <input type="text" placeholder="Имя пользователя" id="sign-in-name"/>
+                                <span></span>
+                            </div>
+                            <div class="login__input-block">
+                                <input type="password" placeholder="Пароль" id="sign-in-password"/>
+                                <span></span>
+                            </div>
+                            <button class="login__btn login-btn" id="sign-in-btn">
+                                Войти
+                            </button>
+                            <a href="sign-up" class="login__toggle-sign login__toggle-sign--up app-link">
+                                Регистрация
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sign-up sign-block">
+                        <div class="login__body">
+                            <h2 class="login__title">Регистрация</h2>
+                            <form class="login__form">
+                                <div class="login__form-body">
+                                    <div class="login__input-block">
+                                        <input type="text" placeholder="Имя пользователя" id="sign-up-name"/>
+                                        <span></span>
+                                    </div>
+                                    <div class="login__input-block">
+                                        <input type="text" placeholder="Фамилия" id="sign-up-firstName" required/>
+                                        <span></span>
+                                    </div>
+                                    <div class="login__input-block">
+                                        <input type="number" placeholder="Ваш возраст (+6)" id="sign-up-age" required/>
+                                        <span></span>
+                                    </div>
+                                    <div class="login__input-block">
+                                        <input type="password" placeholder="Пароль" id="sign-up-password"/>
+                                        <span></span>
+                                    </div>
+                                    <div class="login__input-block">
+                                        <input type="password" placeholder="Пароль" id="sign-up-repassword"/>
+                                        <span></span>
+                                    </div>
+                                    <button class="login__btn login-btn" id="sign-up-btn">
+                                        зарегистрироваться
+                                    </button>
+                                </div>
+                            </form>
+                            <a href="sign-in" class="login__toggle-sign login__toggle-sign--in app-link">
+                                Войти
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page main-menu d-none">
+            <div class="wrapper">
+                <div class="page-content">
+                    <div class="main-menu__header">
+                        <div class="main-menu__user-block">
+                            <div class="main-menu__user">
+                                <div class="main-menu__user-ava-block">
+                                    <img class="main-menu__user-ava" src="./assets/avatar/rik_ava.jpg" alt="Avatart">
+                                </div>
+                                <strong class="main-menu__user-name"></strong>
+                            </div>
+                            <button class="btn-sign-out">Выход</button>
+                        </div>
+                    </div>
+                    <div class="main-menu__books">
+                        <h1 class="main-menu__books-title">Список книг</h1>
+                        <h1 class="main-menu__books-not d-none">Нет Книг</h1>
+                        <ul class="main-menu__books-list"></ul>
+                        <div class="main-menu__books-add">
+                            <button class="main-menu__books-add-btn book-btn add-book-btn">Добавить книгу</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page detail-book d-none">
+            <div class="wrapper">
+                <div class="page-content">
+                    <div class="detail-book__body">
+                        <button class="detail-book__prev-btn">
+                            <img src="./assets/icons/prevarrow.svg" alt="prev">
+                        </button>
+                        <h1 class="detail-book__title">Информация о книге</h1>
+                        <div class="detail-book__block">
+                            <h1 class="detail-book__name">Гарри Поттер и  Философский камень</h1>
+                            <strong class="detail-book__author">Джоан Роулинг</strong>
+                            <ul class="detail-book__list">
+                                <li class="detail-book__item">
+                                    <span class="detail-book__info">Издательтсво:</span>
+                                    <span class="detail-book__info detail-book__info-house"> Росмэн</span>
+                                </li>
+                                <li class="detail-book__item">
+                                    <span class="detail-book__info">Язык оригинала:</span>
+                                    <span class="detail-book__info detail-book__info-lang"> Английский</span>
+                                </li>
+                                <li class="detail-book__item">
+                                    <span class="detail-book__info">Год издания:</span>
+                                    <span class="detail-book__info detail-book__info-year"> 1997</span>
+                                </li>
+                                <li class="detail-book__item">
+                                    <span class="detail-book__info">Кол-во страниц: </span>
+                                    <span class="detail-book__info detail-book__info-page"> 399</span>
+                                </li>
+                                <li class="detail-book__item">
+                                    <span class="detail-book__info">Жанры:</span>
+                                    <span class="detail-book__info detail-book__info-genre"> Приключения, драмма</span>
+                                </li>
+                            </ul>
+                            <div class="detail-book__btns">
+                                <button class="detail-book__btn detail-book__btn--update book-btn">Редактировать</button>
+                                <button class="detail-book__icon-btn btn-add-fovarite detail-book__btn--favorite">
+                                    <img src="./assets/icons/heard.svg" alt="Favorite">
+                                    <img src="./assets/icons/redHeard.svg" alt="Favorite">
+                                </button>
+                                <button class="detail-book__icon-btn detail-book__btn--trash">
+                                    <img src="./assets/icons/basket.svg" alt="Trash">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal modal-add-book">
+            <div class="wrapper">
+                <div class="modal-content">
+                    <div class="modal__body">
+                        <h2 class="modal__title"></h2>
+                        <div class="mdoal__form-block">
+                            <form>
+                                <div class="modal__form-body">
+                                    <div class="modal__input-block input-block">
+                                        <input type="text" placeholder="Название" id="add-book-name"/>
+                                        <span></span>
+                                    </div>
+                                    <div class="modal__input-block input-block">
+                                        <input type="text" placeholder="Автор" id="add-book-author"/>
+                                        <span></span>
+                                    </div>
+                                    <div class="modal__input-block input-block">
+                                        <input type="text" placeholder="Издательтсво" id="add-book-house"/>
+                                        <span></span>
+                                    </div>
+                                    <div class="modal__input-block input-block">
+                                        <input type="text" placeholder="Язык оригинала" id="add-book-lang"/>
+                                        <span></span>
+                                    </div>
+                                    <div class="modal__input-block input-block">
+                                        <input type="number" placeholder="Год издания" id="add-book-year"/>
+                                        <span></span>
+                                    </div>
+                                    <div class="modal__input-block input-block">
+                                        <input type="number" placeholder="Кол-во страниц" id="add-book-page"/>
+                                        <span></span>
+                                    </div>
+                                    <div class="modal__input-block input-block">
+                                        <input type="text" placeholder="Жанры" id="add-book-genre"/>
+                                        <span></span>
+                                    </div>
+                                    <button class="modal__add-book-btn book-btn">Сохранить</button>
+                                    <button class="modal__update-book-btn book-btn">Сохранить</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="loader d-none">
+            <div class="lds-dual-ring"></div>
+        </div>
+
+    </body>
+</html>
